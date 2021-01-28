@@ -895,6 +895,18 @@ RCT_EXPORT_METHOD(setLocalVoiceEqualization:(NSInteger)band
   }
 }
 
+//Set encryption key
+RCT_EXPORT_METHOD(setEncryptionSecret:(NSString *) secret
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject) {
+  NSInteger res = [self.rtcEngine setEncryptionSecret:secret];
+  if (res == 0) {
+    resolve(nil);
+  } else {
+    reject(@(-1).stringValue, @(res).stringValue, nil);
+  }
+}
+
 // set local voice reverb of type
 RCT_EXPORT_METHOD(setLocalVoiceReverb:(NSInteger)reverb value:(NSInteger)value
                   resolve:(RCTPromiseResolveBlock)resolve

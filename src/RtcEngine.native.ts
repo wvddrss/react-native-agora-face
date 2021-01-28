@@ -1370,7 +1370,7 @@ class RtcEngine {
      * Set Encryption Secret
      * Check https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEncryptionSecret: for more info.
      */
-    static enableEncryption(secret: string): Promise<any> {
+    static setEncryptionSecret(secret: string): Promise<any> {
       return ReactNativeAgoraFace.setEncryptionSecret(secret);
     }
 

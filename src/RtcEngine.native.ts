@@ -1365,6 +1365,14 @@ class RtcEngine {
     static setCameraCapturerConfiguration(config: CameraCapturerConfiguration): Promise<any> {
         return ReactNativeAgoraFace.setCameraCapturerConfiguration(config);
     }
+    
+    /**
+     * Set Encryption Secret
+     * Check https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEncryptionSecret: for more info.
+     */
+    static enableEncryption(secret: string): Promise<any> {
+      return ReactNativeAgoraFace.setEncryptionSecret(secret);
+    }
 
     /**
      * Gets the audio mixing volume for local playback.

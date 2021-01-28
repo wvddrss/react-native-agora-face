@@ -1284,6 +1284,12 @@ public class AgoraModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void setEncryptionSecret(String secret, Promise promise) {
+		int res = AgoraManager.getInstance().getEngine().setEncryptionSecret(secret);
+		resolvePromiseFromResolve(res, promise, "setEncryption Failed with secret key: " + secret + " error code: " + res);
+	}
+
+	@ReactMethod
 	public void setCameraCapturerConfiguration(ReadableMap options, Promise promise) {
 		try {
 			CameraCapturerConfiguration.CAPTURER_OUTPUT_PREFERENCE preference = CameraCapturerConfiguration.CAPTURER_OUTPUT_PREFERENCE.CAPTURER_OUTPUT_PREFERENCE_AUTO;

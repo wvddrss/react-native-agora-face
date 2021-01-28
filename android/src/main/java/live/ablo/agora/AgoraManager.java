@@ -243,6 +243,10 @@ public class AgoraManager {
 		return mRtcEngine.joinChannel(token, channelName, optionalInfo, uid);
 	}
 
+	public int setEncryptionSecret(String secret) {
+		return mRtcEngine.setEncryptionSecret(secret);
+	}
+
 	public RtcEngine getEngine() {
 		return mRtcEngine;
 	}
